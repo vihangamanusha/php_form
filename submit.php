@@ -1,17 +1,13 @@
 <?php
-$male_status='unchecked';
-$female_status='unchecked';
-
-if(isset($_POST['submitbtn'])){
-   $gender=$_POST['gender'];
-   if($gender=='male'){
-       $male_status='checked';
-       echo "male selected";
-   }
-   else{
-       $female_status='checked';
-       echo "female selected";
-   }
+if($_SERVER['REQUEST_METHOD']=='POST'){
+    $name=$_POST['name'];
+    if(!preg_match("/^[a-zA-Z\s]*$/",$name)){
+        $nameerr="only letters and white spaces";
+        echo $nameerr;
+    }
+    else{
+        echo "your name is :".htmlspecialchars($name);
+    }
 }
 ?>
 

@@ -1,6 +1,18 @@
 <?php
-   $name=$_REQUEST['name'];
-   echo $name;
+$male_status='unchecked';
+$female_status='unchecked';
+
+if(isset($_POST['submitbtn'])){
+   $gender=$_POST['gender'];
+   if($gender=='male'){
+       $male_status='checked';
+       echo "male selected";
+   }
+   else{
+       $female_status='checked';
+       echo "female selected";
+   }
+}
 ?>
 
 

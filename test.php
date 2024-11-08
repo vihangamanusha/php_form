@@ -1,5 +1,6 @@
 <?php
-    echo $_SERVER['SCRIPT_NAME']."<BR>";
-    echo $_SERVER['PHP_SELF']."<br>";
+   $file="myfile.txt";
+   $handle=fopen($file,"w") or die('can not open the file :'.$file);
+    
 
 ?>

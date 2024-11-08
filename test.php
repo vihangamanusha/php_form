@@ -1,14 +1,23 @@
 <?php
-   $host='localhost';
-   $username='root';
-   $password='801@Vihanga';
-
-   $conn=mysqli_connect($host,$username,$password);
-
+   $conn=mysqli_connect('localhost','root','801@Vihanga');
    if(!$conn){
-    die('could not connect :'.mysqli_error($conn));}
+    die ('couldnot connect :'.mysqli_error($conn));
+   }
+   echo "connected succesfully<br>";
+   
+   $database='newmy';
+   $sql_database_create="CREATE DATABASE IF NOT EXISTS $database";
 
-   echo 'connected successfully';
+   if(!$sql_database_create){
+    die ("can not create database $database:".mysqli_error($conn));
+   }
+
+   echo ("database $database created succesfully<br>");
+
+
+   
    mysqli_close($conn);
+
+
    
 ?>

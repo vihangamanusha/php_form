@@ -8,14 +8,19 @@
    $database='newmy';
    $sql_database_create="CREATE DATABASE IF NOT EXISTS $database";
 
-   if(!$sql_database_create){
+   if(!mysqli_query($conn,$sql_database_create)){
     die ("can not create database $database:".mysqli_error($conn));
    }
 
-   echo ("database $database created succesfully<br>");
+   echo ("database $database created succesfully <br>");
 
+   $db_selected=mysqli_select_db($conn, $database);
+   if(!$db_selected){
+    die ('con not use database '.mysqli_error($conn));
+   }else{
+    echo ("can use database $database");
+   }
 
-   
    mysqli_close($conn);
 
 

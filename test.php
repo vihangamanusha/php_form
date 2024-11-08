@@ -1,10 +1,14 @@
 <?php
-   $file="myfile.txt";
-   $handle=fopen($file,"r") or die('can not open the file :'.$file);  
-   $filesize=filesize($file);
-   $filetext=fread($handle,$filesize);
-   fclose($handle);
+   $host='localhost';
+   $username='root';
+   $password='801@Vihanga';
 
-   echo("file size $filesize and text is $filetext");
+   $conn=mysqli_connect($host,$username,$password);
+
+   if(!$conn){
+    die('could not connect :'.mysqli_error($conn));}
+
+   echo 'connected successfully';
+   mysqli_close($conn);
    
 ?>

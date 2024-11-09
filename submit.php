@@ -1,32 +1,13 @@
 <?php
-if($_SERVER['REQUEST_METHOD']=="POST"){
-    $name=$_POST['name'];
-    $age=$_POST['age'];
-    $email=$_POST['email'];
-
-    if(!preg_match('/^[a-zA-Z\s]*$/',$name)){
-        echo "please use letters only";
-    }
-    else{
-        echo "your name is $name <br>";
-    }
-    echo "<br>";
-    if(!preg_match('/^[0-9]*$/',$age)){
-        echo "please use numbers between 0-9";
-    }else{
-        echo "your age is $age";
-    }
-    echo "<br>";
-    if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
-        echo "enter valid email";
-    }else{
-        echo "your email is $email";
-    }
-}
+   setcookie('item','bag',time()+60);
+ 
 ?>
 
-
-
+<html>
+    <body>
+        <h1>first cokkie</h1>
+</body>
+</html>
 
 
 
